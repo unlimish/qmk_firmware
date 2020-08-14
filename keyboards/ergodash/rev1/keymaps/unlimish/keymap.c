@@ -155,20 +155,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
       case IMEON:
       if (record->event.pressed) {
-        register_code(LANG1);
-        register_code(RALT);
+        register_code(KC_LANG1);
+        register_code(KC_RALT);
       } else {
-        unregister_code(LANG1);
-        unregister_code(RALT);
+        unregister_code(KC_LANG1);
+        unregister_code(KC_RALT);
       }
       break;
     case IMEOFF:
       if (record->event.pressed) {
-        register_code(LANG2);
-        register_code(LALT);
+        register_code(KC_LANG2);
+        register_code(KC_LALT);
       } else {
-        unregister_code(LANG2);
-        unregister_code(LALT);
+        unregister_code(KC_LANG2);
+        unregister_code(KC_LALT);
       }
       break;
   }
