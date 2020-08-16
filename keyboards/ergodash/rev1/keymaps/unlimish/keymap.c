@@ -1,10 +1,17 @@
 #include QMK_KEYBOARD_H
 
 
-#define _QWERTY 0
+enum layer_number {
+  _QWERTY = 0,
+  _EUCALYN,
+  _LOWER,
+  _RAISE,
+  _ADJUST
+};
+/* #define _QWERTY 0
 #define _LOWER 1
 #define _RAISE 2
-#define _ADJUST 16
+#define _ADJUST 16 */
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
@@ -153,6 +160,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case EUCALYN:
       if (record->event.pressed) {
         persistent_default_layer_set(1UL<<_EUCALYN);
+      }
       return false;
       break;
     case LOWER:
